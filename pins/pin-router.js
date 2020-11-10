@@ -13,6 +13,36 @@ router.post("/add", authenticate, (req, res) => {
       res.status(500).json({ message: `Error adding pin: ${err}` });
     });
 });
+router.get("/:id", authenticate, (req, res) => {
+  const { id } = req.params;
+  pins
+    .findById(id)
+    .then((pin) => {
+      if (pin) {
+        res.status(200).json(pin);
+      } else {
+        res.status(404).json({ message: `Pin with id ${id} does not exists` });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({ message: `Error adding pin: ${err}` });
+    });
+});
+router.get("/mypins/:id", authenticate, (req, res) => {
+  const { id } = req.params;
+  pins
+    .findByUserId(id)
+    .then((pin) => {
+      if (pin) {
+        res.status(200).json(pin);
+      } else {
+        res.status(404).json({ message: `User with id ${id} does not exists` });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({ message: `Error adding pin: ${err}` });
+    });
+});
 router.put("/edit/:id", authenticate, (req, res) => {
   const pinChanges = req.body;
   const { id } = req.params;

@@ -4,6 +4,7 @@ module.exports = {
   add,
   find,
   findById,
+  findByUserId,
   update,
   remove,
 };
@@ -17,12 +18,14 @@ function find() {
 }
 
 function findById(pin_id) {
-  return db("pins").where({ pin_id }).first();
+  return db("pins").where("pin_id", pin_id ).first();
 }
-
+function findByUserId(user_id) {
+  return db("pins").where("user_id", user_id);
+}
 async function update(pin_id, changes) {
-    await db("pins").where("pin_id", pin_id).update(changes);
-  return db("pins").where({pin_id}).first()
+  await db("pins").where("pin_id", pin_id).update(changes);
+  return db("pins").where({ pin_id }).first();
 }
 function remove(pin_id) {
   return db("pins").where("pin_id", pin_id).del();
