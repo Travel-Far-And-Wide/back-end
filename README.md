@@ -1,4 +1,6 @@
 # back-end
+## [API Documentation can be found here](https://documenter.getpostman.com/view/10657242/TVejhqGG#c8866234-8378-411e-9dd3-c41d78384ab4)
+## [Trello board can be found here](https://trello.com/b/H4NUIEcx/travel-far-and-wide)
 ## List of modules and libraries being used:
 - __Knex__ - SQL Query Builder for JavaScript.
 - __Knex-cleaner__ - Helper library to clean a PostgreSQL, MySQL or SQLite3 database tables using Knex. Great for integration tests.
@@ -15,7 +17,7 @@
  - __Nodemon__ - is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
  - __jest__ - Jest is a JavaScript test runner, a  library for creating, running, and structuring tests.
  - __supertest__ - HTTP assertions library that uses __superagent__ to allow for easy API testing.
-## [API Documentation can be found here](https://documenter.getpostman.com/view/10657242/TVejhqGG#c8866234-8378-411e-9dd3-c41d78384ab4)
+ 
 
 ## Endpoints
 - ### Post - Register a new user
@@ -83,7 +85,7 @@ This endpoint is used to get info on a specific pin, if the user is logged in.
 This endpoint is used to get info on a specific pin, if the user is logged in.
 
 
-- ### Post - Edit pin
+- ### Put - Edit pin
 
 ```http://localhost:4000/pins/edit/10```
 
