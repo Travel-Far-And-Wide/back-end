@@ -3,6 +3,7 @@ exports.up = function(knex) {
     return knex.schema.createTable("pins", (pins) => {
         pins.increments('pin_id').primary().unsigned();
         pins.integer("user_id").references("id").inTable("users")
+        pins.string("name", 255)
         pins.string("title", 255).notNullable()
         pins.string("address", 255)
         pins.decimal("lat").notNullable();

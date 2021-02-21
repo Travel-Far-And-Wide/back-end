@@ -5,6 +5,7 @@ exports.seed = function (knex) {
         return knex("pins").insert([
           { pin_id: 1,
             user_id: 1,
+            name: "Hawaiian Gardens",
             address: "11871 E Carson St Hawaiian Gardens CA 90716",
             lat: 33.83249402797066,
             lng: -118.08036804199219,
