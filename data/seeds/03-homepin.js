@@ -1,6 +1,5 @@
 exports.seed = function (knex) {
     return knex("home_pins")
-      .truncate()
       .then(() => {
         return knex("home_pins").insert([
           {
