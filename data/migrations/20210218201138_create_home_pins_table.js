@@ -5,8 +5,8 @@ exports.up = function(knex) {
         pins.integer("user_id").references("id").inTable("users")
         pins.string("title", 255).notNullable()
         pins.string("address", 255).notNullable()
-        pins.decimal("lat").notNullable();
-        pins.decimal("lng").notNullable();
+        pins.float("lat").notNullable();
+        pins.float("lng").notNullable();
         pins.string("description")
         pins.string("image_url")
       });
